@@ -2,10 +2,10 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SensorDataController;
 
-Route::post('/UploadMeterRealTimeData', [App\Http\Controllers\MeterDataController::class, 'store']);
+Route::post('/sensor-data', [SensorDataController::class, 'store']);
 
 Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
-

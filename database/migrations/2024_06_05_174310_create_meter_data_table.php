@@ -6,73 +6,50 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateMeterDataTable extends Migration
 {
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('meter_data', function (Blueprint $table) {
             $table->id();
-            $table->decimal('TempC', 5, 2);
-            $table->decimal('TempB', 5, 2);
-            $table->decimal('TempA', 5, 2);
-            $table->integer('PT');
-            $table->decimal('DO2', 5, 2);
-            $table->decimal('DO1', 5, 2);
-            $table->string('source', 20);
-            $table->integer('UpInterval');
-            $table->decimal('Pa', 5, 2);
-            $table->decimal('Pb', 5, 2);
-            $table->decimal('Pc', 5, 2);
-            $table->decimal('EQC', 5, 2);
-            $table->string('meterSn', 50);
-            $table->bigInteger('timestamp');
-            $table->dateTime('CreateTime');
-            $table->string('state', 10);
-            $table->decimal('IN', 5, 2);
-            $table->decimal('EPID', 5, 2);
-            $table->decimal('EPIF', 5, 2);
-            $table->decimal('EPIG', 5, 2);
-            $table->decimal('PFa', 5, 2);
-            $table->decimal('EP', 5, 2);
-            $table->decimal('Ua', 5, 2);
-            $table->decimal('PFc', 5, 2);
-            $table->decimal('EPIJ', 5, 2);
-            $table->decimal('Ub', 5, 2);
-            $table->decimal('PFb', 5, 2);
-            $table->decimal('Uc', 5, 2);
-            $table->decimal('Qa', 5, 2);
-            $table->decimal('Qb', 5, 2);
-            $table->decimal('Qc', 5, 2);
-            $table->decimal('EPIP', 5, 2);
-            $table->decimal('Uab', 5, 2);
-            $table->decimal('Ia', 5, 2);
-            $table->decimal('Ib', 5, 2);
-            $table->decimal('Ic', 5, 2);
-            $table->decimal('MEPIMD', 5, 2);
-            $table->integer('timezone');
-            $table->integer('DI0');
-            $table->integer('DI2');
-            $table->integer('DI1');
-            $table->integer('DI3');
-            $table->decimal('P', 5, 2);
-            $table->decimal('Q', 5, 2);
-            $table->decimal('S', 5, 2);
-            $table->decimal('Ubc', 5, 2);
-            $table->string('meterNo', 100);
-            $table->bigInteger('msgid');
-            $table->dateTime('MEPIMDT');
-            $table->decimal('Fr', 5, 2);
-            $table->decimal('Sa', 5, 2);
-            $table->decimal('Sb', 5, 2);
-            $table->decimal('Sc', 5, 2);
-            $table->integer('CT');
-            $table->decimal('Uca', 5, 2);
-            $table->decimal('PF', 5, 2);
-            $table->decimal('EPE', 5, 2);
-            $table->string('gatewaySn', 50);
-            $table->decimal('EPI', 5, 2);
+            $table->string('tempC');
+            $table->string('tempB');
+            $table->string('tempA');
+            $table->integer('pt');
+            $table->string('do2');
+            $table->string('do1');
+            $table->string('source');
+            $table->integer('upInterval');
+            $table->decimal('pa', 8, 2);
+            $table->decimal('pb', 8, 2);
+            $table->decimal('pc', 8, 2);
+            $table->decimal('eqc', 8, 2);
+            $table->string('state');
+            $table->decimal('in', 8, 2);
+            $table->decimal('epid', 8, 2);
+            $table->decimal('epif', 8, 2);
+            $table->decimal('epig', 8, 2);
+            $table->decimal('pfa', 8, 2);
+            $table->decimal('ep', 8, 2);
+            $table->decimal('ua', 8, 2);
+            $table->decimal('ub', 8, 2);
+            $table->decimal('uc', 8, 2);
+            $table->decimal('qa', 8, 2);
+            $table->decimal('qb', 8, 2);
+            $table->decimal('qc', 8, 2);
+            $table->string('meterSn');
             $table->timestamps();
         });
     }
 
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('meter_data');
