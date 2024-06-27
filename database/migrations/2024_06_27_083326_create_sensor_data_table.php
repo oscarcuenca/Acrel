@@ -18,28 +18,28 @@ class CreateSensorDataTable extends Migration
             $table->string('tempC');
             $table->string('tempB');
             $table->string('tempA');
-            $table->string('pt');
+            $table->integer('pt');
             $table->string('do2');
             $table->string('do1');
             $table->string('source');
             $table->integer('upInterval');
-            $table->decimal('pa', 8, 3);
-            $table->decimal('pb', 8, 3);
-            $table->decimal('pc', 8, 3);
-            $table->decimal('eqc', 8, 3);
+            $table->float('pa', 8, 3);
+            $table->float('pb', 8, 3);
+            $table->float('pc', 8, 3);
+            $table->float('eqc', 8, 2);
             $table->string('state');
-            $table->decimal('in', 8, 3);
-            $table->decimal('epid', 8, 3);
-            $table->decimal('epif', 8, 3);
-            $table->decimal('epig', 8, 3);
-            $table->decimal('pfa', 8, 3);
-            $table->decimal('ep', 8, 3);
-            $table->integer('ua');
-            $table->integer('ub');
-            $table->integer('uc');
-            $table->decimal('qa', 8, 3);
-            $table->decimal('qb', 8, 3);
-            $table->decimal('qc', 8, 3);
+            $table->float('in', 8, 2);
+            $table->float('epid', 8, 3);
+            $table->float('epif', 8, 3);
+            $table->float('epig', 8, 3);
+            $table->float('pfa', 8, 3);
+            $table->float('ep', 8, 2);
+            $table->float('ua', 8, 1);
+            $table->float('ub', 8, 1);
+            $table->float('uc', 8, 1);
+            $table->float('qa', 8, 3);
+            $table->float('qb', 8, 3);
+            $table->float('qc', 8, 3);
             $table->string('meterSn');
             $table->timestamps();
         });
@@ -55,4 +55,3 @@ class CreateSensorDataTable extends Migration
         Schema::dropIfExists('sensor_data');
     }
 }
-

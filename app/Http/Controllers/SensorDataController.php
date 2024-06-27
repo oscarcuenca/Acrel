@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\SensorData;
 
 class SensorDataController extends Controller
 {
     public function store(Request $request)
     {
-        // Lógica para manejar el almacenamiento de datos de sensores
         // Validar y procesar los datos recibidos
         $data = $request->validate([
             'tempC' => 'required|string',
@@ -39,9 +39,9 @@ class SensorDataController extends Controller
             'meterSn' => 'required|string',
         ]);
 
-        // Guardar los datos en la base de datos o realizar otras acciones
-        // ...
+        // Guardar los datos en la base de datos
+        $sensorData = SensorData::create($data);
 
-        return response()->json(['message' => 'Data stored successfully', 'data' => $data]);
+        return response()->json(['message' => 'Data stored successfully', 'data' => $sensorData]);
     }
 }
